@@ -6,12 +6,10 @@ Pentest notes, not intended to be complete ;)
 
 ```bash
 # clone the repository
-git clone git@github.com:simonjujuh/offsec-wiki.git /opt/my-resources/offsec-wiki
-
-# Install dependencies
+git clone git@github.com:simonjujuh/offsec-wiki.git /opt/my-resources/wiki
 
 # Create aliases to fetch the offsec wiki
-alias wiki-search="cd $INSTALL_LOCATION && batcat -p -l md \"$(find "$INSTALL_LOCATION" -type f -name '*.md' | fzf)\""
-# alias wiki-edit="vim \"$(find . -type f -name '*.md' | fzf)\""
-alias wiki-open='subl /opt/host/offsec-wiki'
+alias wis='f() { cd /opt/my-resources/wiki; batcat -p -l md "$(find . -type f -name "*.md" | fzf)" }; f'
+alias wie='f() { cd /opt/my-resources/wiki; vim "$(find . -type f -name "*.md" | fzf)" }; f'
+alias wio='subl /opt/my-resources/wiki'
 ```
